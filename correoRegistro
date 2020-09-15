@@ -1,0 +1,21 @@
+<?php
+
+//Se guardan las variables necesarias de la sesión de usuario
+$user_mail = 'bjcd4242@gmail.com';
+$user_name = 'Braulio';
+$user_id = '1';
+
+        //Si state == 'COMPLETED' se envía el correo de aprobación
+        if($state == "COMPLETED"){
+                $mensajePayPal = "<h3>Registro Completado</h3>";
+                include('enviarCorreo.php'); //Mando a llamar el archivo de enviar correo
+                
+                enviarCorreoRegistro($user_mail, $user_name, $user_id);
+        }else{
+                $mensajePayPal = "<h3>Hay un problema con el registro</h3>";
+                include('enviarCorreo.php'); //Mando a llamar el archivo de enviar correo
+                
+                //Acá
+        }
+
+?>
